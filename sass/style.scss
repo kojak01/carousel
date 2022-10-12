@@ -1,0 +1,16 @@
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+ul {
+    list-style: none;
+}
+li {
+    display: inline-block;
+    margin-right: 20px;
+}
+button {
+    height: 50px;
+    
+}
