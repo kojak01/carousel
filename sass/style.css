@@ -1,18 +1,11 @@
-.navigation {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+.container {
+  border: 1px solid red;
 }
 
-ul {
-  list-style: none;
+#messages {
+  border: 3px solid blue;
 }
 
-li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-button {
-  height: 50px;
+#buttons {
+  border: 5px solid yellow;
 }/*# sourceMappingURL=style.css.map */
