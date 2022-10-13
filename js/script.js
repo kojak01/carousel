@@ -1,43 +1,43 @@
-function getMoveName(argMoveID){
-    if(argMoveID == 1) {
+function liczbaGraczaKomputera(KtoGra){
+    if(KtoGra == 1){
         return 'kamień';
-    } else if(argMoveID == 2){
+    } else if(KtoGra == 2){
         return 'papier';
-    } else {
+    } else if(KtoGra == 3){
         return 'nożyce';
-    }
-}
-
-// Computer Move 
-
-let randomNumber = Math.floor(Math.random() * 3 + 1);
-console.log('losowa liczba to ' + randomNumber);
-
-computerMove = getMoveName(randomNumber);
-console.log('Komputer zagrał ' + computerMove);
-
-// Player Move
-
-let playerInput = prompt('Wpisz liczbe 1: kamień, 2: papier, 3: nożyce!');
-console.log('player wpisał ' + playerInput);
-
-playerMove = getMoveName(playerInput);
-console.log('gracz zagrał ' + playerMove);
-
-// Result Score
-
-function displayResult(argComputer, argPlayer){
-    if((argComputer == 'kamień' && argPlayer == 'papier') ||
-    (argComputer == 'papier' && argPlayer == 'nożyce') ||
-    (argComputer == 'nożyce' && argPlayer == 'kamień')){
-        console.log('Player Wygrywa');
-    } else if (argComputer == argPlayer){
-        console.log('Remis');
-    } else if(argPlayer == 'nieznany ruch'){
-        console.log('wpisz liczbe 1, 2 lub 3!');
     } else {
-        console.log('przegrywasz!');
+        return 'nieznany ruch';
     }
 }
 
-displayResult(computerMove, playerMove);
+let wpisanaLiczbaprzezGracza = prompt('Wpisz liczbę 1: kamień, 2: papier, 3: nożyce!');
+console.log('Gracz wpisał ' + wpisanaLiczbaprzezGracza);
+
+let ZagranieGracza = liczbaGraczaKomputera(wpisanaLiczbaprzezGracza);
+console.log('Gracz zagrał figórę ' +  ZagranieGracza + '!');
+
+// computer Move 
+
+let losowaLiczba = Math.floor(Math.random() * 3 + 1);
+console.log('losowa liczba to ' + losowaLiczba);
+
+let ZagranieKomputera = liczbaGraczaKomputera(losowaLiczba);
+console.log('Komputer zagrał ' + ZagranieKomputera);
+
+// zależności
+
+function podsumowanieWynik(ArgPlayer, ArgComputer){
+    if((ArgPlayer == 'kamień' && ArgComputer == 'nożyce') ||
+    (ArgPlayer == 'papier' && ArgComputer == 'kamień') ||
+    (ArgPlayer == 'nożyce' && ArgComputer == 'papier')){
+        console.log('Wygrywasz!');
+    } else if(ArgPlayer == ArgComputer){
+        console.log('Remis!');
+    } else if (ArgPlayer == 'nieznany ruch'){
+        console.log('wpisz liczbe 1, 2 lub 3');
+    } else {
+        console.log('Przegrywasz!');
+    }
+}
+
+podsumowanieWynik(ZagranieGracza, ZagranieKomputera);
