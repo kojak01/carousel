@@ -13,9 +13,11 @@
 		<div id="messages"></div>
 	</div>
     <script>
-        for(let a = 5; a > 0; a-=2){
-            console.log(a);
-        }
+      for(let number = -2; number <=2; number++){
+        if(number < 0 ) console.log('number jest mniejsze od 0', number);
+        else if(number == 0) console.log('number jest równe 0', number);
+        else if(number > 0) console.log('number jest dodatnie', number);
+      }
     </script>
     <script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
