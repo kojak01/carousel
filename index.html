@@ -13,22 +13,20 @@
 		<div id="messages"></div>
 	</div>
     <script>
-        function sum(liczba1, liczba2){
-            let liczba3 = liczba2 * liczba1;
-            console.log('wynik to: ', liczba3);
+
+      let rocket = {
+        brand: "SpaceX",
+        model: "Falcon",
+        topSpeed: 30000,
+        printInfo: function() {
+            console.log(this.topSpeed, this.brand);
+        },
+        printTopSpeed: function(){
+            console.log(this.topSpeed);
         }
-
-        sum(4,3);
-        sum(10, 20);
-
-        let a = 1
-        let b = 3
-
-        if (a > 0){
-            sum(a,b);
-        }
-
-        
+      }
+      rocket.printInfo();
+      rocket.printTopSpeed();
     </script>
     <script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
