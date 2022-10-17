@@ -13,16 +13,22 @@
 		<div id="messages"></div>
 	</div>
     <script>
-       let data = 0;
-        if (data == 5){
-            console.log('jest równe 5');
-        } else {
-            console.log('liczba nie jest równa 5');
-        }
-
-        if (data < 5){
-            console.log('Liczba Data jest mniejsza niż 5')
-        }
+       let age = 120;
+       switch(age){
+        case 100:
+            console.log('stary');
+            break;
+        case 200:
+            console.log('starszy');
+            break;
+        case 240:
+        case 250:
+        case 260:
+            console.log('najstarszy');
+            break;
+            default:
+                console.log('Liczba z poza zakresu');
+       }
     </script>
     <script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
