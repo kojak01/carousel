@@ -13,23 +13,16 @@
 		<div id="messages"></div>
 	</div>
     <script>
-       const sender = 'myself';
-       let recipient = 'ania@example.com';
-        let title = 'Hej';
-        let content = `czesc
-        tresc maila
-        pozdrawiam`
+       let data = 0;
+        if (data == 5){
+            console.log('jest równe 5');
+        } else {
+            console.log('liczba nie jest równa 5');
+        }
 
-        let sendFlag = true;
-        let attachment = 'lista książek';
-        let emailDate = '2022.01.01';
-        const emailProgram = 'Gmail';
-        let bcc = 'ania@example.com, daniel@example.com, pawle@example.com';
-        let bbc2 = ["ania@example.com", 'daniel@example.com', "pawle@example.com"];
-        console.log(bbc2[1]);
-
-        let cc = ['Asia@example.com', 'karol@example.com'];
-        console.log(cc[1]);
+        if (data < 5){
+            console.log('Liczba Data jest mniejsza niż 5')
+        }
     </script>
     <script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
