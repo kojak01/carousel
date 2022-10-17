@@ -13,11 +13,22 @@
 		<div id="messages"></div>
 	</div>
     <script>
-      for(let number = -2; number <=2; number++){
-        if(number < 0 ) console.log('number jest mniejsze od 0', number);
-        else if(number == 0) console.log('number jest równe 0', number);
-        else if(number > 0) console.log('number jest dodatnie', number);
-      }
+        function sum(liczba1, liczba2){
+            let liczba3 = liczba2 * liczba1;
+            console.log('wynik to: ', liczba3);
+        }
+
+        sum(4,3);
+        sum(10, 20);
+
+        let a = 1
+        let b = 3
+
+        if (a > 0){
+            sum(a,b);
+        }
+
+        
     </script>
     <script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
