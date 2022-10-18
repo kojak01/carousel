@@ -13,24 +13,35 @@
 		<div id="messages"></div>
 	</div>
     <script>
-      
-      let rocket = {
-        brand : "SpaceX",
-        model : "Falcon",
-        topSpeed : 30000,
-
-        printInfo: function(){
-          console.log(this.brand, this.model, this.topSpeed);
+      let person = {
+        name : 'Konrad',
+        surname : 'Piątek',
+        age : 32,
+        addres: {
+          city : 'Jelenia Góra',
+          postalCode : 58-570,
+          country : 'Poland',
         },
 
-        printTopSpeed: function(){
-          console.log('Maksymalna predkość rakiety to: ', this.topSpeed);
+        GetName : function(){
+          return this.name +' '+ this.surname;
         }
+      }
+      console.log(person.GetName());
+      console.log(person.addres.country);
 
-         
-      };
-      rocket.printTopSpeed();
-      rocket.printInfo();
+      function getNewPerson(name, surname, age) {
+        return {
+          name: name,
+          surname: surname,
+          age: age
+        };
+      }
+      const user = getNewPerson('Ania', 'Kowalska', 29);
+      console.log(user);
+
+      const user2 = getNewPerson('Olek', 'K.', 33);
+      console.log(user2);
     </script>
     <script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
