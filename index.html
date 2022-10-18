@@ -13,58 +13,15 @@
 		<div id="messages"></div>
 	</div>
 
-    <button id="button1">Click me!</butto n>
-
+    <button id="button1">Click me!</button>
+    <button id="button2">Click me!</button>
+    <button id="button3">Double Click!</button>
     <script>
+      function buttonClicked(event){
+        console.log('Double Click!');
+      }
 
-
-
-
-      // callback 
-        function test1() {
-
-        }
-
-        let test2 = function() {
-            // funkcja anonimowa
-        }
-        test2();
-        //definicja funkcji z callbackiem jako argument
-        function test3(a, callback){
-          console.log('test3', a);
-          callback(a);
-        }
-        function test4(arg) {
-          console.log('test 4 arg:', arg);
-        }
-
-        test3(12, test4);
-        //
-
-        //funkcja przekazana do innej funkcji
-
-        function ok(num){
-          console.log('liczba dodatnia lub > 0, num:', num);
-        }
-        function err(num){
-          console.log('liczba ujemna, bład, num: ', num);
-        }
-        function testPositiveNum(n, resolve, error){
-          if (n >= 0){
-            resolve(n);
-          } else {
-            error(n);
-          }
-        }
-
-        testPositiveNum(-5, ok, err);
-
-        // podpięcie funckji callback pod zdarzenie 'click';
-        function buttonClicked(event){
-          console.log('przycisk został kliknięty');
-        }
-        
-        document.getElementById('button1').addEventListener('click', buttonClicked);
+      document.getElementById('button3').addEventListener('dblclick', buttonClicked);
     </script>
     <script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
