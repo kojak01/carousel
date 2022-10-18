@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sass/style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
+  
+<script>
+  //capital * Math.pow( (1 + (0.04/12)) , (12 * 5))
 
-    <script>
-      window.addEventListener('load', function(){
-        console.log('load event');
-        let div = document.getElementById("content");
-        div.innerHTML = "<h1>Hello!</h1>";
-      })
-    </script>
-    <div class="container">
-		<div id="buttons"></div>
-		<div id="messages"></div>
-	</div>
-  <div id="content">
-
-  </div>
-    <script>
-    
-    </script>
-  <script src="js/functions.js"></script>
-	<script src="js/script.js"></script>
+  let capital = 1000;
+  let rate = 0.04;
+  let n = 12; /// co ile kapitalizacja
+  let t = 10  // na ile lat lokata
+  let finalMoney = capital * Math.pow((1 + (rate/n)), n * t );
+  console.log('wartosc finalna:' , Math.floor(finalMoney));
+</script>
 </body>
 </html>
