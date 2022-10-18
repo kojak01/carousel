@@ -22,17 +22,14 @@
           country: null
         }
       };
+        function updateAddress(obj, postalCode, city, country){
+          user.address.postalCode = postalCode;
+          user.address.city = city;
+          user.address.country = country;
+        }
 
-
-      console.log(user)
-      function updateAddress(obj, postalCode, city, country){
-        user.address.postalCode = postalCode;
-        user.address.city = city;
-        user.address.country = country;
-      }
-
-      updateAddress(user, '00001', 'WAWA', 'PL');
-      console.log(user);
+        updateAddress(user, '57-800', 'Jelenia Góra', 'Poland');
+        console.log(user);
     </script>
     <script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
