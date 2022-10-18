@@ -8,15 +8,39 @@
 </head>
 <body>
   
-<script>
-  //capital * Math.pow( (1 + (0.04/12)) , (12 * 5))
+  <script>
+    let data = 15;
+    let info = typeof data;
+    console.log(info);
 
-  let capital = 1000;
-  let rate = 0.04;
-  let n = 12; /// co ile kapitalizacja
-  let t = 10  // na ile lat lokata
-  let finalMoney = capital * Math.pow((1 + (rate/n)), n * t );
-  console.log('wartosc finalna:' , Math.floor(finalMoney));
-</script>
+    if (info == 'number'){
+      console.log('data zawiera liczbé');
+    }
+
+    data = 'tekst';
+
+    if(typeof data == 'number'){
+      console.log('data ma liczbé');
+    } else if(typeof data == 'string'){
+      console.log('data ma string');
+    }
+    //zwracane wartosci przez type off 
+    console.log(typeof 20);
+    console.log(typeof 'tekst');
+    console.log(typeof '40');
+    console.log(typeof true);
+    console.log(typeof 'true');
+    console.log(typeof {});
+    console.log(typeof {a:5});
+    console.log(typeof undefined);
+    console.log(typeof null);// object wyjátkowy przypadek; blad w JS;
+    console.log(typeof function(){});
+    console.log(typeof []);
+    console.log(typeof [1, 2]);
+    console.log(typeof Symbol());
+    console.log(typeof 1n); // bigint duza liczba calkowita
+
+  </script>
+
 </body>
 </html>
