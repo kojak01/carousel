@@ -13,20 +13,24 @@
 		<div id="messages"></div>
 	</div>
     <script>
-
+      
       let rocket = {
-        brand: "SpaceX",
-        model: "Falcon",
-        topSpeed: 30000,
-        printInfo: function() {
-            console.log(this.topSpeed, this.brand);
+        brand : "SpaceX",
+        model : "Falcon",
+        topSpeed : 30000,
+
+        printInfo: function(){
+          console.log(this.brand, this.model, this.topSpeed);
         },
+
         printTopSpeed: function(){
-            console.log(this.topSpeed);
+          console.log('Maksymalna predkość rakiety to: ', this.topSpeed);
         }
-      }
-      rocket.printInfo();
+
+         
+      };
       rocket.printTopSpeed();
+      rocket.printInfo();
     </script>
     <script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
