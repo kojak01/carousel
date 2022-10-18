@@ -12,24 +12,48 @@
 		<div id="buttons"></div>
 		<div id="messages"></div>
 	</div>
+
+    <button id="button1">Click me!</butto n>
+
     <script>
-      let user = {
-        name: 'Ania',
-        surname: 'Kowalski',
-        address: {
-          postalCode : null,
-          city: null,
-          country: null
-        }
-      };
-        function updateAddress(obj, postalCode, city, country){
-          user.address.postalCode = postalCode;
-          user.address.city = city;
-          user.address.country = country;
+      // callback 
+        function test1() {
+
         }
 
-        updateAddress(user, '57-800', 'Jelenia Góra', 'Poland');
-        console.log(user);
+        let test2 = function() {
+            // funkcja anonimowa
+        }
+        test2();
+        //definicja funkcji z callbackiem jako argument
+        function test3(a, callback){
+          console.log('test3', a);
+          callback(a);
+        }
+        function test4(arg) {
+          console.log('test 4 arg:', arg);
+        }
+
+        test3(12, test4);
+        //
+
+        //funkcja przekazana do innej funkcji
+
+        function ok(num){
+          console.log('liczba dodatnia lub > 0, num:', num);
+        }
+        function err(num){
+          console.log('liczba ujemna, bład, num: ', num);
+        }
+        function testPositiveNum(n, resolve, error){
+          if (n >= 0){
+            resolve(n);
+          } else {
+            error(n);
+          }
+        }
+
+        testPositiveNum(-5, ok, err);
     </script>
     <script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
