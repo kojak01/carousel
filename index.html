@@ -16,6 +16,10 @@
     <button id="button1">Click me!</butto n>
 
     <script>
+
+
+
+
       // callback 
         function test1() {
 
@@ -54,6 +58,13 @@
         }
 
         testPositiveNum(-5, ok, err);
+
+        // podpięcie funckji callback pod zdarzenie 'click';
+        function buttonClicked(event){
+          console.log('przycisk został kliknięty');
+        }
+        
+        document.getElementById('button1').addEventListener('click', buttonClicked);
     </script>
     <script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
