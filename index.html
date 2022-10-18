@@ -9,36 +9,35 @@
 <body>
   
   <script>
-    let data = 15;
-    let info = typeof data;
-    console.log(info);
+   // number - typ wartoci zmiennoprzecinkowy 64 bitowy
+   // liczby calkowita i oraz dziesietnych
+   let c = 0xf // liczba szesnastkowa
+   const d = .45 // 0.45
+   // maksymalna liczba dodatnia i calkowita
+  console.log(Number.MAX_SAFE_INTEGER)// max liczba cakowita która mozemy uzyc w JS
+  console.log(Number.MIN_SAFE_INTEGER)// minimalna calkowita
 
-    if (info == 'number'){
-      console.log('data zawiera liczbé');
-    }
+  console.log(Number.isSafeInteger(9007199254740991))// sprawdza czy jest to bezpieczna lista calkowita 
 
-    data = 'tekst';
+  // kazdy typ prosty ma odnosnik w typu zlozony number i Number (object);
 
-    if(typeof data == 'number'){
-      console.log('data ma liczbé');
-    } else if(typeof data == 'string'){
-      console.log('data ma string');
-    }
-    //zwracane wartosci przez type off 
-    console.log(typeof 20);
-    console.log(typeof 'tekst');
-    console.log(typeof '40');
-    console.log(typeof true);
-    console.log(typeof 'true');
-    console.log(typeof {});
-    console.log(typeof {a:5});
-    console.log(typeof undefined);
-    console.log(typeof null);// object wyjátkowy przypadek; blad w JS;
-    console.log(typeof function(){});
-    console.log(typeof []);
-    console.log(typeof [1, 2]);
-    console.log(typeof Symbol());
-    console.log(typeof 1n); // bigint duza liczba calkowita
+  // NaN - not a number cos nie jest liczba
+
+  const someNaN = 0/0;
+  console.log(someNaN);
+
+  console.log(Math.sqrt(-1)); //pierwiwastek kwadratowy
+
+  //parseInt() = konwersja lancucha znakow na liczbe
+
+  let someNum = parseInt('12.345');
+  console.log(someNum); // liczba calkowita 
+
+  console.log( parseInt('texst12.345')); // nie udalo sie wartosci przeszlo na liczbe
+
+  console.log(isNaN(0/0));// true bo 0/0 daje NaN
+
+  console.log(Number.isNaN(67)); // false bo 67 jest prawidlowa wartoscia 
 
   </script>
 
