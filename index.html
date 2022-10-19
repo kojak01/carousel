@@ -7,98 +7,21 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <div id="container">
+    <span id="time"></span>
+  </div>
   <script>
-   // tablice uporządkowana kolekcja elementów 
+    // chcemy zeby zegar aktualizował się co sekunde
+   // let date = new Date(); // aktualny czas
+   // console.log(date);
+    function currentTime(){
+      let date = new Date();
+      //console.log(date);
+      document.getElementById('time').innerHTML = date.toLocaleTimeString();
+    }
 
-   // nie sa typem a obiektem !!!!!
-   // mogą przechowywac dowolne typy: proste i złożone
-   // elementy są uporządkowane w postaci indeksów, każdy indeks to liczba całkowita
+    setInterval(currentTime, 1000);// 1sekunda 1000 minisekund
 
-   let a = []; /// pusta tablica
-
-   let b =[22, 'tekst', {a:1}, [5,4,3], function(){}, null];
-   console.log(b);
-   console.log(b[6]);// undefined element nie istnieje
-   console.log(b[b.length-1]); // odwołanie do elementu ostanie w tym przypadku null
-   console.log(b[0]); // 22
-
-   // tablica jest obiektem 
-   b[2] = 99;
-   console.log(b); // został zmodyfikowany o wartość 99 mutowalne modyfikowalne !!!!! czyli ten obiekt w pamieci
-
-   let c = new Array(12, 'tekst', 9);
-    console.log(c);
-
-    let d = Array(1,2,3);
-    console.log(d);
-    let e = []; // mozemy zawsze ja modyfikowac
-    e[0] = 'test';
-    e[7] = 'test3';
-    e[e.length] = 'test4'; // dodanie na koncu tablicy
-    e.push('test5');// dodanie na koncu tablicy
-    console.log(e); // length 7 trzeba uwazac
-
-    let f = [0,1,2,3,4,5,6,7];
-    console.log(f);
-    f.length = 4;
-    console.log(f); // obcinamy ilosc elementow w tablicy
-
-    // kasowanie konkretny indeks
-
-    delete f[1];
-    console.log(f);
-    console.log(f[1]);// undefined
-
-    // czy istnieje indeks w tablicy
-
-    console.log( 1 in f); // false poniewaz indeks nie istnieje
-
-    console.log( 2 in f); // true
-
-    let g = Array(5).fill(7); // stworz tablice z 5 elementami i przypisz kazdemu z nich wartośc 7
-    console.log(g); // 
-
-    // iteracja - przechodzenie po elementach tablicy
-
-    let h = [99, 56, 45, 'tekst'];
-    for (let i = 0; i < h.length; i++){
-    // h.length ograniczenie
-    console.log( h[i] );/// nazwa tablicy i licznik i""!"
-  }
-
-  let arr1 = ['el1', 'el2', 'el3', 8];
-  arr1.forEach( function(item, index, array){
-    console.log(item, index);
-
-  })// wywoła funckje na kazdym elemencie tablicy
-
-  let arr2 = arr1.concat([1,2,3]); // polaczenie tablic
-  console.log(arr2);
-
-  let arr3 = arr1.concat( [5,6], [10,11,12]);
-  console.log(arr3);
-
-  // polaczenie tablicy w jeden string 
-
-  let strFromArr = arr1.join();
-  console.log(strFromArr); //el1,el2,el3,8
-  let strFromArr2 = arr1.join('|');
-  console.log(strFromArr2); // el1|el2|el3|8
-
-  // odwraca kolejnosc wszystkich elkementow
-
-  let arr4 = [1,2,3,4];
-  arr4.reverse();
-  console.log(arr4); //[4, 3, 2, 1]
-
-  arr4.push(99);
-  console.log(arr4); //[4, 3, 2, 1, 99]
-
-  let arrE1 = arr4.pop(); // pobiera ostatni element z tablicy i usuwa!!!!
-  console.log(arrE1);// 
-
-  console.log(arr4);
   </script>
 
 </body>
