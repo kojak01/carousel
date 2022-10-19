@@ -22,6 +22,26 @@
     if (null == undefined) console.log('true wykona się');
     // porównanie ścisłe, typt się nie zgadzają więc nie są równe
     if (null === undefined) console.log('false, nie wykona się');
+
+    let test = 5;
+
+    console.log(test);
+    test = null;
+
+    console.log(test);
+    console.log(typeof null); //  OBJECT;;
+
+    // undefined i null to falsy values = falszywe wartosci
+
+    if(null) console.log('nie wykona sie bo null zamieniony na false')
+    if(undefined) console.log('nie wykona się bo undefined zamienione zostanie na false')
+
+    //proste porównanie
+
+    if(null == undefined) console.log('wykona sie');
+    // porównanie ścisłe
+    // porównanie typu i wartości
+    if(null === undefined) console.log('nie wykona się');
   </script>
 
 </body>
