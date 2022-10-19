@@ -11,17 +11,69 @@
     <span id="time"></span>
   </div>
   <script>
-    // chcemy zeby zegar aktualizował się co sekunde
-   // let date = new Date(); // aktualny czas
-   // console.log(date);
-    function currentTime(){
-      let date = new Date();
-      //console.log(date);
-      document.getElementById('time').innerHTML = date.toLocaleTimeString();
-    }
+    // Operatory = * - / itp.
+    // Operator przypisania ustawia wartość lewemu operandowi na podstawie wartości operandów z prawej strony
 
-    setInterval(currentTime, 1000);// 1sekunda 1000 minisekund
+    let a = 10;
+    a += 5 // operato przypisania oraz arytmetyczny dodanie do a 5 i przypisanie
+    a -= 3; // odjęcie 3 z a i przypisanie do a, wynik 12
+    a *= 2; // pomnożenie a przez dwa i przypisanie do a wynik 12;
+    a /= 3; // podzielenie a przez 3 i przypisanie wyniku do a rezultat 8
+    a %= 5; // reszta z dzielenia z przez 5 i przypisanie, rezultat 3;
+    a **= 3; // 3 do 3 potęgi, wynik 27
 
+    // inne operatory przypisania np bitowe itd: <<= >>= &= ^= |= &&= ||=
+    // arytmetyczne + - * / 11 b++ b--
+    // operatory poorówniania true false == != < > <= >=
+    // ścisle operatory porówniania ==  ===  !== porównianie operandów
+    // porównianie z obiektem if (10 === {a:10}) console.log('false') jeśli porównujemy dwa OBIEKTY to tak 
+    // naprawdę porównujemy te same adresy w pamieci!! 
+
+    // let a = {data : 22};
+    // if(a==a) console.log('true');
+    // 
+    // OPERATOR && if(true && true) console.log('ok')
+    // if (10>7) && (3<=3) console.log('wykona sie')
+
+    // || <<== oraz daje true jesli chociaz jedna ze stron lub obie dadza true, nazywany rownie suma logiczna OR
+    // if(10>7 || 3 == 7) console.log('wykona się')
+
+    // NOT operator
+    // if(!(10>7))console.log('nie wykona sie bo zastosowalismy negacje!! czyli odwrocenie wartosci logicznej')
+
+    // Operatory BITOWE bity operandow sa porownywalne a wczesnie sa konwertowane do 32 bitowej liczby
+
+    // operator łączenie STRINGÓW 'witaj ' + 'świecie'
+
+    // operator warunkowy
+
+    // let age = 18;
+    // let data = ( age >= 18) ? "dorosły" : "nieletni";
+
+    //OPERATOR PRZECINKA
+
+    // for (let i = 0, j = 5; i < 5; i++, j--){
+      // console.log('i: ' + i + " j"+j);
+    //}
+
+    // OPERATOR unary !!
+      /* let obj = { str: 'text'};
+      console.log(obj.str); // text
+      delete obj.str; // operator delete kasuje właściwość wewnątrz obiektu
+      console.log(obj.str)// undefined
+
+      typeof 123.45 // number, operator zwraca typ wartości
+      let c = +"27" operator + konwertuje string na liczbe  c=27
+      let d = -"27" number: -27
+      let e = void 0; void wywołuje wyrazenie i zwraca undefined
+      */
+      //Operator RELACYJNE in takie operatory porównuja operandy  i zwracaja true jesli spełniaja porównanie;
+
+      let arr = ['one', 'two', 'three'];
+      if(1 in arr) console.log('indeks 1 jest w tablicy');
+      if('length' in arr) console.log('właściwość length jest w tablicy') // właściwość!!!! length dlatego true
+
+      // pierwszenstwo operatorow
   </script>
 
 </body>
