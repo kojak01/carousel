@@ -9,71 +9,33 @@
 <body>
   
   <script>
-    // boolean true and false słowa kluczowe
+   // null and undefined 
+   // undefined jest nie tylko typem ale tez i wartością
+    // undefined jest zwykle rozumiane jako brak wartości, ze wartosc nie została jeszcze powiązana ze zmienna
+   let data;
 
-    let flag = true;
+   typeof data;
 
-    if(flag == true){
-      console.log(' tak to prawda')
+   //undefined jest również jako identyfikator częśćia globalnego obiektu:
+   //console.log(window.undefined);
+    // mozna stworzyc funkje ze zmienna o nazwie undefined i nadac jej wartosc
+
+    function test(){
+      let undefined = 2;
+      console.log('wartość ' + undefined);
     }
 
-    if(flag == false){
-      console.log('prawda');
-    }
-      // !! zmienia wartość logiczną w tym momencie np. z true na false
-    if(!flag) console.log('skrótowo jest to prawda');
-
-    console.log(!flag);
-    console.log(flag);
-    console.log(false);
-    console.log(!false);
-
+    test();
     //
+    typeof undefined; // niezdefiniownaa wartosc 
 
-    if (4 > 1) {
-      console.log(' 4 jest większe od 1');
-    }
-    // falsy values = 'falszywe wartości'
-{}
-    let data = '';
-    if (data) { //data bedzie zmienione na wartość boolean nazywamy to konwersja z jednego typu na wartosc na inny
-      console.log('prawda')
-    }
+    //jest to zmienna zadeklarowana ale nie posiada wartosci 
 
-    //let data2 = 'tekst';  truthy value !!!!
-   // if (data) { //data bedzie zmienione na wartość boolean nazywamy to konwersja z jednego typu na wartosc na inny
-   //   console.log('prawda')
-  //  }
-
-  // false values zawsze konwertoweane są na false!
-  // '' pusty string
-  // 0, -0
-  // 0n BigInt
-  //NaN
-  //null
-  //undefined
-  //false
-
-  let data3 = null;
-  if (data3){ // nie prawda bo null bedzie konwertowany na false
-    console.log('data3 warrtosc true')
-  } else {
-    console.log('data3 ma wartośc false');
-  }// i tak samo z cala reszta nan null undefind false itd.
+    // b;  jest nie zdefiniowany identyfikator czyli nie istnieje jesli nie ma przed nim let var lub cons ale niestety w konsoli po 
+    // uzyciu konsoli zostanie wyswietlone ze b nie zostało zadeklarowane 
+    // a po uzyciu typeoff!! poda nam w konsoli wartosc "undefined"
 
 
-
-  // true values - prawdziwe wartości
-  // te wartości konwertują na true!!!!
-  // 'tekst'
-  // -1, 1 liczby inne niz zero
-  // [], jaki kolwiek obiekt [false, false] <== obiekt to obiekt dalej jest true mimo podania false w srodku;
-  // {}, { a : 1}
-  // window {flag : false}
-  // document
-  // function
-  let test = 1;
-  if (test) console.log('prawda', test);
   </script>
 
 </body>
