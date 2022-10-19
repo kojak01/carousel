@@ -9,14 +9,19 @@
 <body>
   
   <script>
-    let a;// zmienna jest zadeklarowana
-    console.log(a);// undefined
-    // przypisuje waertosc automatycznej nie ma wartosci w zmiennej,
-    if (a  == undefined) console.log('brak wartości');
+    // null oznacza wartość pustą wcześniej mogła być przechowywana wartość, ale juz nie jest
+    // w przeciwienstwie do undefined, null jest słowem kluczowym!!! a nie identyfikatorem;
 
-    // b;  bład:  Uncaught ReferenceError: b is not defined
+    let data = 10; // przypisana wartość
+    data = null // teraz data nie ma wartości jest null!!
 
-    console.log(typeof b); // undefined
+    // Operator TYPEOF dla null zwraca wartość OBJECT! mimo, że jest prymitywem
+
+    // porównanie null i undefined !!! jeśli nie są tego samego typu to będzie konwersja!!!!
+
+    if (null == undefined) console.log('true wykona się');
+    // porównanie ścisłe, typt się nie zgadzają więc nie są równe
+    if (null === undefined) console.log('false, nie wykona się');
   </script>
 
 </body>
