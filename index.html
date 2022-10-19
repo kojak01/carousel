@@ -9,35 +9,100 @@
 <body>
   
   <script>
-   // number - typ wartoci zmiennoprzecinkowy 64 bitowy
-   // liczby calkowita i oraz dziesietnych
-   let c = 0xf // liczba szesnastkowa
-   const d = .45 // 0.45
-   // maksymalna liczba dodatnia i calkowita
-  console.log(Number.MAX_SAFE_INTEGER)// max liczba cakowita która mozemy uzyc w JS
-  console.log(Number.MIN_SAFE_INTEGER)// minimalna calkowita
+   //to ciag znakow utf - 16
+   const num = 78;
+    const s3 = `
+        String w wielu
+        liniach ${num}
+        wyrażenia js: ${1 + 2 + 3}
+    `;
+   console.log('tekst'.length);
+   console.log(''.length); // długość ciagów znaków
+   console.log('tekst'[2]); // po indeksie znak
+   console.log( s3[ s3.length - 9] );// ostani znak?
+   console.log(s3.charAt(5)); // znak pod 5 indexem
+   console.log(s3.charCodeAt(15)); // odwołanie do unicode #32
+    // wyszukiwanie słów w tekście
+   let simpleText = 'Ala ma kota a Ania ma psa';
+   let pos = simpleText.indexOf('Ania'); 
+   console.log(pos); // Anie jest pod 15 indeksem
+   pos = simpleText.lastIndexOf('ma');  // przeszukiwanie od konca np slowo "ma"
+   console.log(pos);
 
-  console.log(Number.isSafeInteger(9007199254740991))// sprawdza czy jest to bezpieczna lista calkowita 
+   // drugi argument od którego miejsca ma być wyszukanie
 
-  // kazdy typ prosty ma odnosnik w typu zlozony number i Number (object);
+   pos = simpleText.indexOf('ma', 12);
+   console.log(pos);
 
-  // NaN - not a number cos nie jest liczba
+   pos = simpleText.lastIndexOf('ma', 10);
+   console.log(pos);
+    // trim() - wycina biłe znaki z początku i konca łancucha znaków
+   console.log( ' tekst coś   tam   '. trim());
+   console.log(`
+    
+    test
+   `.trim()); ///  mamy wyczyszczone białe znaki z początku i konca; nowa linia tez
 
-  const someNaN = 0/0;
-  console.log(someNaN);
+   // toUpperCase()// powiekszanie liter
+   console.log ('ala'.toUpperCase());
+   console.log ('AUTO'. toLowerCase());
 
-  console.log(Math.sqrt(-1)); //pierwiwastek kwadratowy
+   // łączenie ciągów znaków
 
-  //parseInt() = konwersja lancucha znakow na liczbe
+   const resultStra = "something";
+   const resultStr = 'text' + ' ' + resultStra;
+   console.log(resultStr);
 
-  let someNum = parseInt('12.345');
-  console.log(someNum); // liczba calkowita 
+   let str2 = 'test'.concat(' other test');
+   console.log(str2);
 
-  console.log( parseInt('texst12.345')); // nie udalo sie wartosci przeszlo na liczbe
+   // pobieranie fragmentów z string;
+   let str5 = '0123456789';
+   console.log(str5.slice(2));
+   console.log(str5.slice(4, 8))// nie uwzglednia 8 tylko pomniejsza zawsze o -1;
 
-  console.log(isNaN(0/0));// true bo 0/0 daje NaN
+   console.log(str5.slice(-3)); // -3 znaki od konca czyli 789]
+   console.log(str5.slice(-6, -2));
 
-  console.log(Number.isNaN(67)); // false bo 67 jest prawidlowa wartoscia 
+   console.log(str5.substr(0)); // otrzymamy cały łancuch znaków
+   console.log(str5.substr(5, 3)); // od 5 indeksu 3 znaki
+
+   console.log(str5.substr(-7, 2)); // od -7 indeksu dwa znaki czyli 34
+
+   // split() dzieli stringi ze wzgledu na przekazany znak
+
+   let str6 = 'a1 b2 c3 d4 e';
+   let dataStr6 = str6.split(' ');
+   console.log(dataStr6); // tablica z tymi znakami podzielic
+
+   // replace zmienia słowa w stringu
+
+   let str7 = 'Ala ma kota';
+   let str8 = str7.replace('kota', 'psa'); // zamiana słowa kota na slowo psa
+   console.log(str8);
+
+   // mutowalnosc vs niemutowalnosc 
+   // w Js tylko tablice i obierkty są mutowalne czyli mogą byc
+  // zmieniane
+  // prymitywy jak string moga przyjmować różne wartości, ale 
+  // przy każdej zmianie ptrzymujemy nową wartość
+
+  let str9 = 'tekst';
+  str9[0] = 'A';
+  console.log(str9);// tekst stringi i inne prymitywy są niemutowalne czyli nie da sie ich zastepować innymi znakami dalej mamy tekst a nie aekst
+  let str10 = str9.replace("t", "A"); // teraz za pomocą funkcji replace doszlo do zamiany liter i wyrzucenia poprzedniego słowa z pamięc jS
+  console.log(str10);
+
+  // tablica jest mutowalna podobnie jak obiekty
+  // przy zmianie wartośc nie powstaje nowy obiekt tylko
+  // modyfukowany jest już istniejący
+  let arr = ['T', 'E', 'K', 'S', 'T']
+  arr[0] = 'A';
+  console.log(arr); // zamiana litery a na T nie powstała nowa tablica bo jest mutowalna modyfikujemy stara tablice
+
+  let obj = { a : 1 };
+  obj.a = 7;
+  console.log(obj); // zamianta 1 na 7 objekt też jest elementem mutowalnym
 
   </script>
 
