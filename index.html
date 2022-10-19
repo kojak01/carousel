@@ -9,33 +9,14 @@
 <body>
   
   <script>
-   // null and undefined 
-   // undefined jest nie tylko typem ale tez i wartością
-    // undefined jest zwykle rozumiane jako brak wartości, ze wartosc nie została jeszcze powiązana ze zmienna
-   let data;
+    let a;// zmienna jest zadeklarowana
+    console.log(a);// undefined
+    // przypisuje waertosc automatycznej nie ma wartosci w zmiennej,
+    if (a  == undefined) console.log('brak wartości');
 
-   typeof data;
+    // b;  bład:  Uncaught ReferenceError: b is not defined
 
-   //undefined jest również jako identyfikator częśćia globalnego obiektu:
-   //console.log(window.undefined);
-    // mozna stworzyc funkje ze zmienna o nazwie undefined i nadac jej wartosc
-
-    function test(){
-      let undefined = 2;
-      console.log('wartość ' + undefined);
-    }
-
-    test();
-    //
-    typeof undefined; // niezdefiniownaa wartosc 
-
-    //jest to zmienna zadeklarowana ale nie posiada wartosci 
-
-    // b;  jest nie zdefiniowany identyfikator czyli nie istnieje jesli nie ma przed nim let var lub cons ale niestety w konsoli po 
-    // uzyciu konsoli zostanie wyswietlone ze b nie zostało zadeklarowane 
-    // a po uzyciu typeoff!! poda nam w konsoli wartosc "undefined"
-
-
+    console.log(typeof b); // undefined
   </script>
 
 </body>
