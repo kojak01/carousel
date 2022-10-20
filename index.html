@@ -5,42 +5,83 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    body {
+      display:flex;
+      justify-content: center;
+      width: 100vw;
+      background: #363d57;
+    }
+    .container {
+      width: 400px;
+      background: white;
+      border-radius: 10px;
+    }
+    .container h3 {
+      text-align: center;
+    }
+    .rate {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 5px;
+      margin: 10px;
+      border-bottom: 1px dotted black;
+    }
+  </style>
 </head>
 <body>
-  <div id="container">
-    <span id="time"></span>
+  <div class="container">
+    <h3>Tabela NBP nr: <span id="date"></span> </h3>
+    <div id="data-table">
+
+    </div>
   </div>
   <script>
-    // SCOPE zakres zmiennych GLOBALNY i LOKALNY
-    /* zakres scope jezykow programowania zakres definiowany jest przez blok kodu ale nie w JS
-    w JS wyróżniamy zakres globalny ale tez i lokalny, Zakres to widocznosc zmiennych dla poszczegolnych czesci programu
+    startApp();
 
-    zakres Globalny = istnieje przez cale zycie skryptu, raz zadeklarowana zmienna globalna juz tam pozostanie z wyjatkiem uzycia na niej DELETE
-    Globalna zmienna moze byc uzywana wewnatrz oraz poza funkcja w praktyce gdziekolwiek w biezacym dokumencie. 
-    W przeglądarce window jest obiektem globalnym.
-            GLOBALNA WINDOW!
-    zakres Lokalny = istnieje wewnątrz caiała funkcji w której zmienna została zadeklarowana włączając argumenty funkcji.
-
-
-    DOMYŚlnie JS nie ma zakresu blokowego co powoduje pewne problemy */ 
-
-    // wywołana funckja moze zmienic wartosc zmiennej globalnej
-
-    var someData = 10;
-
-    function doSTH() {
-      someData = 50;
+    async function startApp(){
+      const apiUrl = "https://api.nbp.pl/api/exchangerates/tables/a?format=json";
+      const response = await fetch(apiUrl); // tak piszemy przy pobieraniu danych z serwera!!!!! mowa o const respone i const data
+      const data = await response.json(); // dzieki temu przerobilismy funkcje RESPONSE na uzyteczna
+      // asynchroniczne czyli dzialanie jednoczesnie FETCH działa w tle. AWAIT poczekaj az sie fetch zaladuje // musimy do AWAIT przed nazwa funkcji w której wystepuja ta funkcja
+      // wstawićna początku ciag znaków ASYNC async function~~
+      //console.log(data);
+      processData(data[0]);
     }
 
-    doSTH();
-    console.log( someData ); // 50
+    function processData(data){
+      console.log(data);
 
-    for(var i=0; i<5;i++){
-      console.log(i); // wypisywała liczby 0 1 2 3 4 5
+      const code = data.effectiveDate;
+      const table = data.table;// tabela A
+      const tableNum = data.no;
+      const ratesArr = data.rates;
+
+      const dataTableDiv = document.getElementById('data-table');
+      document.getElementById('date').innerHTML = tableNum;
+
+      ratesArr.forEach(function(el){
+        console.log(el);
+        const code = el.code; // USD
+        const currency = el.currency; // $ 
+        const price = el.mid; // 3.98
+
+        addRateContent(code, currency, price, dataTableDiv);
+      });
     }
-    console.log(i); // a tu wypisze 5 
 
-    // let const zakres lokalny blokowy !!!! dostepna w tym bloku !!
+    function addRateContent(code, currency, price, dataTableDiv) {
+      const el = document.createElement('div');
+      el.classList.add('rate');
+
+      el.innerHTML = `
+        <div>${code}</div>
+        <div>${currency}</div> 
+        <div>${price} zł </div> 
+      `;
+
+      dataTableDiv.append(el);
+    }
   </script>
 
 </body>
