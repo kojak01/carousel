@@ -1,21 +1,37 @@
-function mnoZenie(arg1) {
-    return arg1 * 2
-}
+let mnozenie = (arg1) => {
+    console.log(arg1 * 2);
+};
+mnozenie(4);
+let mnozenie2 = (num1, num2) => {
+    console.log(num1*num2);
+};
+mnozenie2(4,454);
 
-let result = mnoZenie(4);
-result = mnoZenie(5);
-result = mnoZenie(12);
-result = mnoZenie(14);
-console.log(result)
+let potega = (c) => {
+    console.log(c*c);
+};
+potega(5555);
 
-function mnoZenieMnozenie (liczba1, liczba2) {
-   return liczba1 * liczba2
-}
+let car1 = {
+    mark: 'Audi',
+    model: 'A6',
+    productionYear: 1993
+};
 
-console.log(mnoZenieMnozenie(2,13));
+let car2 = {
+    mark: 'Seat',
+    model: 'Leon',
+    productionYear: 2007
+};
 
-function potega(a) {
-    return a * a
-}
+console.log(car1, car2);
+console.log(car1.mark, car2.mark);
 
-console.log(potega(22));
+let divide = (a,b) => {
+    if(b === 0) {
+        console.log('niedozwolona operacja')
+    } else {
+        console.log(a/b);
+    }
+};
+divide(1123,2132);
