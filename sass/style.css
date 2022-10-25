@@ -1,3 +1,11 @@
 .color {
   background: black;
+}
+
+.color1 {
+  background: rgb(252, 0, 0);
+}
+
+button {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

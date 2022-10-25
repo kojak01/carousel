@@ -23,3 +23,12 @@ const button = document.getElementById('switch');
 button.addEventListener('click', () => {
   document.body.classList.toggle('color');
 })
+
+// what will we see in the console?
+
+console.log(1);
+setTimeout(() => console.log(2), 1000);
+setTimeout(() => console.log(3), 0);
+console.log(4);
+
+// 1, 4, 3, 2,
