@@ -1,11 +1,15 @@
-#id {
-  color: rgb(255, 0, 221);
+.container {
+  background: pink;
+  height: 300px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-div {
-  color: red;
-}
-
-.class {
-  color: blue;
+.box {
+  background: red;
+  height: 50px;
+  width: 50px;
+  margin: 10px;
 }/*# sourceMappingURL=style.css.map */
