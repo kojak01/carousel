@@ -5,84 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
-    body {
-      display:flex;
-      justify-content: center;
-      width: 100vw;
-      background: #363d57;
-    }
-    .container {
-      width: 400px;
-      background: white;
-      border-radius: 10px;
-    }
-    .container h3 {
-      text-align: center;
-    }
-    .rate {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 5px;
-      margin: 10px;
-      border-bottom: 1px dotted black;
-    }
-  </style>
 </head>
 <body>
-  <div class="container">
-    <h3>Tabela NBP nr: <span id="date"></span> </h3>
-    <div id="data-table">
-
-    </div>
-  </div>
   <script>
-    startApp();
+    const arr = [[3,21,37], [61,79,101,120], [133,149]];
 
-    async function startApp(){
-      const apiUrl = "https://api.nbp.pl/api/exchangerates/tables/a?format=json";
-      const response = await fetch(apiUrl); // tak piszemy przy pobieraniu danych z serwera!!!!! mowa o const respone i const data
-      const data = await response.json(); // dzieki temu przerobilismy funkcje RESPONSE na uzyteczna
-      // asynchroniczne czyli dzialanie jednoczesnie FETCH działa w tle. AWAIT poczekaj az sie fetch zaladuje // musimy do AWAIT przed nazwa funkcji w której wystepuja ta funkcja
-      // wstawićna początku ciag znaków ASYNC async function~~
-      //console.log(data);
-      processData(data[0]);
+const isNumberInArrayofArrays = (number, array) => {
+  let found = false;
+  array.forEach(innerArray => {
+    if (innerArray.indexOf(number) !== -1) {
+      found = true;
+      return found;
     }
+  }    
+  );
+  return found;
+};
 
-    function processData(data){
-      console.log(data);
-
-      const code = data.effectiveDate;
-      const table = data.table;// tabela A
-      const tableNum = data.no;
-      const ratesArr = data.rates;
-
-      const dataTableDiv = document.getElementById('data-table');
-      document.getElementById('date').innerHTML = tableNum;
-
-      ratesArr.forEach(function(el){
-        console.log(el);
-        const code = el.code; // USD
-        const currency = el.currency; // $ 
-        const price = el.mid; // 3.98
-
-        addRateContent(code, currency, price, dataTableDiv);
-      });
-    }
-
-    function addRateContent(code, currency, price, dataTableDiv) {
-      const el = document.createElement('div');
-      el.classList.add('rate');
-
-      el.innerHTML = `
-        <div>${code}</div>
-        <div>${currency}</div> 
-        <div>${price} zł </div> 
-      `;
-
-      dataTableDiv.append(el);
-    }
+console.log(isNumberInArrayofArrays(0, arr)); //false
+console.log(isNumberInArrayofArrays(21, arr)); //true
+console.log(isNumberInArrayofArrays(221, arr)); //false
   </script>
-
 </body>
 </html>
