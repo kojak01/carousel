@@ -16,12 +16,10 @@ console.log(isNumberInArrayofArrays(0, arr)); //false
 console.log(isNumberInArrayofArrays(21, arr)); //true
 console.log(isNumberInArrayofArrays(221, arr)); //false
 
-
 let color = 'white';
 
 const button = document.getElementById('switch');
 
 button.addEventListener('click', () => {
-  color = color === 'white' ? 'black' : 'white';
-  document.body.style.background = color;
+  document.body.classList.toggle('color');
 })
