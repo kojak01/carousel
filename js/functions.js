@@ -54,12 +54,24 @@ let OddNumber = (n) => {
 
 OddNumber(55)*/
 
-let isBiggerThan10 = (number) => {
-    if(number > 10) {
-        console.log('Liczba jest większa od 10');
-    } else {
-        console.log('Liczba jest mniejsza od 10');
-    }
-}
+// let isBiggerThan10 = (number) => {
+//     if(number > 10) {
+//         console.log('Liczba jest większa od 10');
+//     } else {
+//         console.log('Liczba jest mniejsza od 10');
+//     }
+// }
 
-isBiggerThan10(1);
+// let Obwod = (radius) => {
+//     for( let i = 1; i <=radius; i++){
+//         console.log(2*3.14*i)
+//     }
+// }
+//Obwod(20);
+
+// let Nieparzyste = (n) => {
+//     for(let i = 1; i <=n; i++) {
+//         console.log(2*i);
+//     }
+// }
+// Nieparzyste(10);
