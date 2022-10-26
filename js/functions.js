@@ -1,4 +1,4 @@
-let mnozenie = (arg1) => {
+/*let mnozenie = (arg1) => {
     console.log(arg1 * 2);
 };
 mnozenie(4);
@@ -41,4 +41,15 @@ let nOddNumbers = (n) => {
         console.log(2*i - 1);
     }
 }
-nOddNumbers(445);
+nOddNumbers(3);
+
+console.log(134>2)
+
+
+let OddNumber = (n) => {
+    for(let i = 1; i <=n; i++){
+        console.log(2*i);
+    }
+}
+
+OddNumber(55)*/
